@@ -1,0 +1,11 @@
+//cria um arquivo sequelize que ao ser executado cria a tabela no mysql
+    npx sequelize-cli model:generate --name pessoa --attributes nome:string,sobrenome:string,cpf:string,email,string
+
+//executa os codigos mas migrations do sequelize criadas
+    npx sequelize-cli db:migrate
+
+//tabela sequelizeMeta salva os comendos que ele fez, ex ao rodar o codigo de cima ele rodou a migration do primeiro comando
+//pelo id já sabe que executou a migration
+
+//cria um arquivo de migrations, para que possa ser personalizado e executado
+npx sequelize-cli migration:generate --name addRgColumn
