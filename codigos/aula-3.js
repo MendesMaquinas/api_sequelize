@@ -52,5 +52,5 @@ function deletarPessoa(id) {
     });
 }
 
-//criarPessoa();
+criarPessoa();
 //atualizarPessoa(1);

@@ -1,8 +1,11 @@
 //cria um arquivo sequelize que ao ser executado cria a tabela no mysql
     npx sequelize-cli model:generate --name pessoa --attributes nome:string,sobrenome:string,cpf:string,email,string
 
-//executa os codigos mas migrations do sequelize criadas
+//executa os codigos mas migrations do sequelize criadas, metodo up
     npx sequelize-cli db:migrate
+
+//reverte a ultima migration
+    npx sequelize-cli db:migrate:undo
 
 //tabela sequelizeMeta salva os comendos que ele fez, ex ao rodar o codigo de cima ele rodou a migration do primeiro comando
 //pelo id já sabe que executou a migration
