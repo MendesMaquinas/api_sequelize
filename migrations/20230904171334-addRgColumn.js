@@ -7,7 +7,7 @@ module.exports = {
 
     try {
       await queryInterface.addColumn(
-        "pessoas",
+        "pessoa",
         "rg",
         {
           type: Sequelize.STRING,
@@ -28,7 +28,7 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction();
 
     try {
-      await queryInterface.removeColumn("pessoas", "rg", { transaction });
+      await queryInterface.removeColumn("pessoa", "rg", { transaction });
       await transaction.commit();
     } catch (err) {
       await transaction.rollback();
