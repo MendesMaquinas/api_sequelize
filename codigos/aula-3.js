@@ -1,7 +1,6 @@
-const { DataTypes } = require("sequelize");
 const db = require("../models/index");
 
-const Pessoa = db.Pessoa;
+const Pessoa = db.pessoa;
 
 function criarPessoa() {
   Pessoa.create({
@@ -39,7 +38,7 @@ function atualizarPessoa(id) {
 }
 
 function deletarPessoa(id) {
-  Pessoa.delete({
+  Pessoa.destroy({
     where: {
       id,
     },
@@ -52,5 +51,6 @@ function deletarPessoa(id) {
     });
 }
 
-criarPessoa();
+//criarPessoa();
 //atualizarPessoa(1);
+deletarPessoa(2);

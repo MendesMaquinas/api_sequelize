@@ -1,10 +1,10 @@
 const db = require("../models/index");
 
-const Pessoa = db.Pessoa;
+const Pessoa = db.pessoa;
 
 const pessoas = [
   {
-    nome: "Joao",
+    nome: "fds",
     sobrenome: "Siva",
     cpf: "111.111.111-11",
     email: "j@gmail.com",
@@ -36,4 +36,4 @@ function criarPessoas() {
     });
 }
 
-//criarPessoas();
+criarPessoas();
