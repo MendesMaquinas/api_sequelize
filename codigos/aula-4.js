@@ -1,6 +1,6 @@
 const db = require("../models/index");
 
-const Pessoa = db.pessoa;
+const Pessoa = db.Pessoas;
 
 const pessoas = [
   {
