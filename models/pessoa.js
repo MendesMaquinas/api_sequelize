@@ -8,8 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Pessoa.hasOne(models.Enderecos, {foreignKey: "pessoaId"})
-      Pessoa.hasMany(models.Telefone,{foreignKey: "pessoaId"})
+      Pessoa.hasOne(models.Enderecos, {foreignKey: "pessoaId"})//1 - 1
+      Pessoa.hasMany(models.Telefone,{foreignKey: "pessoaId"}) //1 - n
+      Pessoa.belongsToMany(Pessoa, {through: "pessoa_seguidores", foreignKey: "pessoaId", as: "seguindo"})//n - n
+      Pessoa.belongsToMany(Pessoa, {through: "pessoa_seguidores", foreignKey: "seguePessoaId", as: "seguidores"})//relacionamento na mesma tabela
     }
   }
   Pessoa.init(
